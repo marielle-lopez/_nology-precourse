@@ -41,12 +41,28 @@ Leave your message here!
         </main>
 
         <footer>
-            <dl id="messages">
-
-            </dl>
+            <div class="messages-header">
+                <h2>Messages</h2>
+                <button onclick="deleteMessages();">Clear Messages</button>
+            </div>
+            <div class="messages-wrapper">
+                <dl id="messages">
+                </dl>
+            </div>
         </footer>
 
         <script>
+            function deleteMessages() {
+                // if there are existing messages in sessionStorage
+                if (window.sessionStorage.getItem('messages')) {
+                    // remove all messages from sessionStorage
+                    window.sessionStorage.removeItem('messages');
+                }
+
+                // re-render messages
+                renderMessages();
+            }
+
             function submitMessage(event) {
                 // prevent default form submission behaviour
                 event.preventDefault();
@@ -99,8 +115,10 @@ Leave your message here!
                     const currentMessage = messages[i];
 
                     // update listItem with appropriate HTML (as a string)
-                    listItem += `<dt>${currentMessage.name} - ${currentMessage.email}</dt>`
+                    listItem += '<div class="message">'
+                    listItem += `<dt class="message-title">${currentMessage.name} - ${currentMessage.email}</dt>`
                     listItem += `<dd>${currentMessage.message}</dd>`
+                    listItem += '</div>'
                     listItem += '<br>';
 
                     // update listItems by adding listItem
