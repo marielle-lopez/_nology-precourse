@@ -13,6 +13,10 @@
     margin: 0;
 }
 
+p {
+    margin-bottom: 20px;
+}
+
 footer p {
     margin: 10px;
 }
@@ -75,5 +79,5 @@ footer {
 }
 
 main {
-    margin: 0 5vw;
+    margin: 0 10vw;
 }
