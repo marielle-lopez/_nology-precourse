@@ -5,13 +5,14 @@
 }
 
 .menu-section {
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .menu-item {
     background-color: var(--light-pink);
     border-radius: 10px;
     display: flex;
+    justify-content: space-between;
 }
 
 .menu-section img {
@@ -25,22 +26,32 @@
     margin: 0;
 }
 
-.menu-item .details {
+.details {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-content: space-between;
+    justify-content: space-between;
+    text-align: right;
 }
 
-.menu-item .details .heading {
+.details .heading {
     font-weight: bold;
 }
 
-.menu-item .details .price {
-    text-align: right;
+.details .price {
     color: var(--foreground);
 }
 
-.details {
-    text-align: right;
+#new-label {
+    background-color: var(--accent);
+    padding: 10px 15px;
+    color: white;
+    font-weight: bold;
+    width: 45px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: left;
+    margin-bottom: 20px;
 }
