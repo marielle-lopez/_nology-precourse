@@ -110,6 +110,11 @@ footer .social-media-information img {
     border-radius: 8px;
 }
 
+footer .social-media-information a {
+    text-decoration: none;
+}
+
+
 footer .links {
     display: flex;
     flex-direction: column;
@@ -120,6 +125,10 @@ footer .links a {
     color: var(--foreground);
     text-decoration: none;
     font-weight: bold;
+}
+
+footer .links a:hover {
+    color: #c96f6e;
 }
 
 footer .wrapper {
@@ -140,10 +149,14 @@ footer .right-content p {
     margin: 0 0 10px 0;
 }
 
-footer .address {
-    margin: 0 0 20px 0;
+footer .addresses p {
+    margin: 0;
     text-align: left;
     color: black;
+}
+
+footer .addresses {
+    margin-bottom: 20px;
 }
 
 footer .mailing-list-subscription-wrapper {
