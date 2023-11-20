@@ -56,6 +56,12 @@ Leave your comment here
             </form>
         </main>
 
+        <footer>
+            <dl id="currentMessages">
+
+            </dl>
+        </footer>
+
         <script>
             function submitMessage(event) {
                 event.preventDefault();     // prevents form from behaving in its default way, allows us to interact with it in JS
@@ -77,7 +83,33 @@ Leave your comment here
                 currentMessages.push(messageObject);
                 window.sessionStorage.setItem('messages', JSON.stringify(currentMessages));
                 // console.log(messageObject);
+
+                renderMessages();
             }
+
+            function renderMessages() {
+                let currentMessages = [];
+
+                if (window.sessionStorage.getItem('messages')) {
+                    currentMessages = JSON.parse(window.sessionStorage.getItem('messages'));
+                }
+
+                let listItems = [];
+
+                for (let i = 0; i < currentMessages.length; i++) {
+                    let listItem = "";
+                    const currentMessage = currentMessages[i];
+                    listItem += `<dt>${currentMessage.fullName} - ${currentMessage.email}</dt>`;
+                    listItem += `<dd>${currentMessage.contactType}: ${currentMessage.message}</dd>`;
+                    listItem += `<br>`;
+                    listItems.push(listItem);
+                }
+
+                let descList = document.getElementById('currentMessages');
+                descList.innerHTML = listItems.join('');
+            }
+
+            renderMessages();
         </script>
     </body>
 </html>
