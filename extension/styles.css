@@ -13,6 +13,10 @@
     margin: 0;
 }
 
+footer p {
+    margin: 10px;
+}
+
 html {
     background-color: var(--background);
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
