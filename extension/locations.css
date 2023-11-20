@@ -17,3 +17,10 @@
     background-color: var(--light-pink);
     border-radius: 10px;
 }
+
+.location ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 20px 30px;
+    font-size: small;
+}
