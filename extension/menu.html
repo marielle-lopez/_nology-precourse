@@ -22,12 +22,106 @@
 
         <main>
             <h1>Menu</h1>
+            <p>We're always concocting new flavours for you to try, so check out our menu online or visit our stores to see what we've got to offer. Our seasonal flavours aren't around all year 'round, so don't wait too long to try them!</p>
+
+            <div class="menu-section">
+                <p>New!</p>
+                <div class="menu-items" id="new-flavours">
+                </div>
+            </div>
             
+            <div class="menu-section">
+                <p>Seasonal Flavours</p>
+                <div class="menu-items" id="seasonal-flavours">
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <p>Our 'Here-to-stay' Flavours</p>
+                <div class="menu-items" id="other-flavours">
+                </div>
+            </div>
         </main>
 
         <footer>
             <p>© 2022-2023, Scoop. All rights reserved.</p>
             <p>Made by Marielle Louisse Lopez, 2023.</p>
         </footer>
+
+        <script>
+            function renderMenuItems(flavours, content) {
+                for (i = 0; i < flavours.length; i++) {
+                    let menuItem = '<div class="menu-item">';
+                    menuItem += `<img src="${flavours[i].imagePath}">`;
+                    menuItem += '<div class="details">';
+                    menuItem += `<p class="heading">${flavours[i].name}</p>`;
+                    menuItem += `<p class="price">${flavours[i].price}</p>`;
+                    menuItem += '</div></div>';
+
+                    content.push(menuItem); 
+                }
+                return content;
+            }
+
+            function renderMenu() {
+                const newFlavours = [
+                    {name: "Dulce de Leche", price: "$4.00", imagePath: ".\\images\\dulce-de-leche.jpg"},
+                    {name: "Brown Butter", price: "$4.00", imagePath: ".\\images\\brown-butter.jpg"},
+                    {name: "Ube", price: "$3.50", imagePath: ".\\images\\ube.jpg"},
+                    {name: "Froot Loops", price: "$3.50", imagePath: ".\\images\\froot-loops.jpg"}
+                ];
+
+                const seasonalFlavours = [
+                    {name: "Mango", price: "$4.00", imagePath: ".\\images\\mango.jpg"},
+                    {name: "Coconut Pineapple", price: "$3.75", imagePath: ".\\images\\coconut-pineapple.jpg"},
+                    {name: "Cherry", price: "$3.75", imagePath: ".\\images\\cherry.jpg"},
+                    {name: "Blue Moon", price: "$4.00", imagePath: ".\\images\\blue-moon.jpeg"},
+                    {name: "Pandan", price: "$4.00", imagePath: ".\\images\\pandan.jpg"},
+                ];
+
+                const otherFlavours = [
+                    {name: "Vanilla Bean", price: "$2.50", imagePath: ".\\images\\vanilla-bean.jpg"},
+                    {name: "Belgian Chocolate", price: "$2.50", imagePath: ".\\images\\belgian-chocolate.jpeg"},
+                    {name: "Strawberry", price: "$2.50", imagePath: ".\\images\\strawberry.jpg"},
+                    {name: "Mint Chocolate Chip", price: "$2.75", imagePath: ".\\images\\mint-chocolate-chip.jpg"},
+                    {name: "Cookies and Cream", price: "$2.75", imagePath: ".\\images\\cookies-and-cream.jpg"},
+                    {name: "Rocky Road", price: "$2.75", imagePath: ".\\images\\rocky-road.jpg"},
+                    {name: "Blueberry", price: "$3.00", imagePath: ".\\images\\blueberry.jpg"},
+                    {name: "Pistachio", price: "$4.00", imagePath: ".\\images\\pistachio.jpg"},
+                    {name: "Bueno", price: "$3.50", imagePath: ".\\images\\bueno.jpg"},
+                    {name: "Lucky Charms", price: "$3.50", imagePath: ".\\images\\lucky-charms.jpg"},
+                    {name: "Bubblegum", price: "$3.00", imagePath: ".\\images\\bubblegum.jpg"},
+                    {name: "Brownie", price: "$3.50", imagePath: ".\\images\\brownie.jpg"},
+                    {name: "Butter Pecan", price: "$3.00", imagePath: ".\\images\\butter-pecan.jpg"},
+                    {name: "Tiramisu", price: "$3.00", imagePath: ".\\images\\tiramisu.jpg"},
+                    {name: "Salted Caramel", price: "$2.75", imagePath: ".\\images\\salted-caramel.jpg"},
+                    {name: "Cookie Dough", price: "$2.75", imagePath: ".\\images\\cookie-dough.jpg"},
+                    {name: "Maple Walnut", price: "$3.00", imagePath: ".\\images\\maple-walnut.jpg"},
+                    {name: "Peanut Butter Cup", price: "$3.00", imagePath: ".\\images\\peanut-butter-cup.jpg"},
+                    {name: "Lemon Sorbet", price: "$2.75", imagePath: ".\\images\\lemon-sorbet.jpg"},
+                    {name: "Funfetti", price: "$2.75", imagePath: ".\\images\\funfetti.jpg"}
+                ];
+
+                let newFlavoursContent = [];
+                newFlavoursContent = renderMenuItems(newFlavours, newFlavoursContent);
+
+                let seasonalFlavoursContent = [];
+                seasonalFlavoursContent = renderMenuItems(seasonalFlavours, seasonalFlavoursContent);
+
+                let otherFlavoursContent = [];
+                otherFlavoursContent = renderMenuItems(otherFlavours, otherFlavoursContent)
+
+                let newFlavoursSection = document.getElementById('new-flavours');
+                newFlavoursSection.innerHTML = newFlavoursContent.join('');
+
+                let seasonalFlavoursSection = document.getElementById('seasonal-flavours');
+                seasonalFlavoursSection.innerHTML = seasonalFlavoursContent.join('');
+
+                let otherFlavoursSection = document.getElementById('other-flavours');
+                otherFlavoursSection.innerHTML = otherFlavoursContent.join('');
+            }
+
+            renderMenu();
+        </script>
     </body>
 </html>
