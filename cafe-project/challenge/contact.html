@@ -23,7 +23,7 @@
         </header>
 
         <main>
-            <form class="contact-form">
+            <form class="contact-form" onsubmit="return submitMessage(event);">
                 <label for="email">Email Address</label>
                 <input type="text" name="email" id="email" required>
                 
@@ -39,5 +39,34 @@ Leave your message here!
                 <input type="submit">
             </form>
         </main>
+
+        <script>
+            function submitMessage(event) {
+                // prevent default form submission behaviour
+                event.preventDefault();
+
+                // create variables for each input and store their values
+                const email = document.getElementById('email').value;
+                const name = document.getElementById('name').value;
+                const message = document.getElementById('message').value;
+
+                // create object from above variables
+                currentMessage = {email, name, message};
+
+                // empty array of messages
+                let messages = [];
+
+                // check if messages already exists in sessionStorage
+                if (window.sessionStorage.getItem('messages')) {
+                    messages = JSON.parse(window.sessionStorage.getItem('messages'));
+                }
+
+                // add currentMessage object to messages array
+                messages.push(currentMessage);
+
+                // update messages in sessionStorage
+                window.sessionStorage.setItem('messages', JSON.stringify(messages));
+            }
+        </script>
     </body>
 </html>
