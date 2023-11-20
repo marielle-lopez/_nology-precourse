@@ -30,7 +30,46 @@ footer {
 .message-title {
     font-weight: bold;
 }
+
 .message {
     background-color: #fffcf2;
     padding: 10px;
+}
+
+.messages-header button {
+    background-color: #e63946;
+}
+
+.messages-header button:hover {
+    background-color: #c2313d;
+    color: white;
+}
+
+input, textarea {
+    padding: 5px;
+    border: 1px solid #c6c6c6;
+}
+
+input[type='reset'], input[type='submit'], .messages-header button {
+    border: none;
+    padding: 10px;
+    border-radius: 0.2rem;
+}
+
+input[type='submit'] {
+    background-color: #6a994e;
+}
+
+input[type='submit']:hover {
+    background-color: #5d8645;
+    color: white;
+}
+
+input[type='reset'] {
+    background-color: #d8d2ba;
+}
+
+input[type='reset']:hover {
+    background-color: #aca794;
+    color: white;
 }
