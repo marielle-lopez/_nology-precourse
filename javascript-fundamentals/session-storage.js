@@ -1,3 +1,5 @@
+// completed in console
+
 sessionStorage.setItem('firstName', 'Marielle'); 
 sessionStorage.getItem('firstName');
 
