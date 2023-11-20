@@ -14,7 +14,6 @@ nav > ul {
     justify-content: space-around;
     align-items: center;
     height: 40px;
-    margin-top: 20px;
 }
 
 nav > ul > li > a {
@@ -38,7 +37,9 @@ h1 {
 }
 
 nav {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    background-color:#d8d2ba;
+    font-weight: bold;
 }
 
 form input, button {
