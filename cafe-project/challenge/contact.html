@@ -40,6 +40,12 @@ Leave your message here!
             </form>
         </main>
 
+        <footer>
+            <dl id="messages">
+
+            </dl>
+        </footer>
+
         <script>
             function submitMessage(event) {
                 // prevent default form submission behaviour
@@ -66,7 +72,50 @@ Leave your message here!
 
                 // update messages in sessionStorage
                 window.sessionStorage.setItem('messages', JSON.stringify(messages));
+
+                // update rendered messages when new message is submitted
+                renderMessages();
             }
+
+            function renderMessages() {
+                // empty array to hold messages
+                let messages = [];
+
+                // check sessionStorage for existing messages
+                if (window.sessionStorage.getItem('messages')) {
+                    // store existing messages into 'messages' variable
+                    messages = JSON.parse(window.sessionStorage.getItem('messages'));
+                }
+
+                // empty array to hold list items
+                let listItems = [];
+
+                // iterate through array of messages
+                for (i = 0; i < messages.length; i++) {
+                    // initialise current list item to empty string
+                    let listItem = "";
+
+                    // get current message
+                    const currentMessage = messages[i];
+
+                    // update listItem with appropriate HTML (as a string)
+                    listItem += `<dt>${currentMessage.name} - ${currentMessage.email}</dt>`
+                    listItem += `<dd>${currentMessage.message}</dd>`
+                    listItem += '<br>';
+
+                    // update listItems by adding listItem
+                    listItems.push(listItem)
+                }
+
+                // store description list element in variable
+                let descList = document.getElementById('messages')
+
+                // alter content of description list by adding messages
+                descList.innerHTML = listItems.join('');
+            }
+
+            // render messages on page load
+            renderMessages();
         </script>
     </body>
 </html>

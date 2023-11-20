@@ -8,3 +8,9 @@ main > .contact-form {
     grid-template-columns: 1fr 2fr;
     grid-gap: 10px;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
