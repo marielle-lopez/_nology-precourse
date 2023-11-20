@@ -29,7 +29,7 @@
         </header>
 
         <main>
-            <form class="contact-form">
+            <form class="contact-form" onsubmit="return submitMessage(event);">
                 <label for="email">Email Address</label> <!-- for is linked to name of input -->
                 <input type="text" name="email" id="email" required>
 
@@ -55,5 +55,29 @@ Leave your comment here
                 <input type="submit">
             </form>
         </main>
+
+        <script>
+            function submitMessage(event) {
+                event.preventDefault();     // prevents form from behaving in its default way, allows us to interact with it in JS
+
+                const email = document.getElementById('email').value;
+                const fullName = document.getElementById('full-name').value;
+                const contactType = document.getElementById('contact-type').value;
+                const message = document.getElementById('message').value;
+
+                const messageObject = {email, fullName, contactType, message};
+                
+                let currentMessages = [];
+
+                // checking if 'messages' exists in session storage
+                if (window.sessionStorage.getItem("messages")) {
+                    currentMessages = JSON.parse(window.sessionStorage.getItem("messages"));
+                }
+
+                currentMessages.push(messageObject);
+                window.sessionStorage.setItem('messages', JSON.stringify(currentMessages));
+                // console.log(messageObject);
+            }
+        </script>
     </body>
 </html>
