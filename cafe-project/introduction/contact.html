@@ -57,12 +57,25 @@ Leave your comment here
         </main>
 
         <footer>
-            <dl id="currentMessages">
-
-            </dl>
+            <div class="form-title-section">
+                <h2>Contact Messages</h2>
+                <button onclick="deleteMessages();">Clear Messages</button>
+            </div>
+            <div class="form-wrapper">
+                <dl id="currentMessages">
+                </dl>
+            </div>
         </footer>
 
         <script>
+            function deleteMessages() {
+                if (window.sessionStorage.getItem('messages')) {
+                    window.sessionStorage.removeItem('messages');
+                }
+
+                renderMessages();
+            }
+
             function submitMessage(event) {
                 event.preventDefault();     // prevents form from behaving in its default way, allows us to interact with it in JS
 

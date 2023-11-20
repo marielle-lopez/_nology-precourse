@@ -10,7 +10,15 @@ main > .contact-form {
 }
 
 footer {
+    margin-top: 50px;
+}
+
+.form-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+}
+
+.form-title-section {
+    text-align: center;
+    margin-bottom: 40px;
 }
