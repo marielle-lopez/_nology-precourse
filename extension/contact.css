@@ -1,0 +1,74 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introductory-content {
+    margin-bottom: 40px;
+}
+
+.left-section, .call-content, .locations-content, .social-media-content, .right-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 30vw;
+    background-color: var(--light-pink);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.left-section input, .left-section textarea {
+    font-family: 'Rubik', sans-serif;
+    padding: 8px;
+    border: 1px solid #c6c6c6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.left-section button {
+    border: none;
+    background-color: var(--accent);
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    max-width: 75px;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.right-section img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.right-section a {
+    font-weight: bold;
+    color: var(--foreground);
+}
+
+.right-section p {
+    display: flex;
+    align-items: center;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.socials img {
+    margin-right: 8px;
+    border-radius: 8px;
+    width: 30px;
+}
