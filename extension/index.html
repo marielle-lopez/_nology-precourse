@@ -74,9 +74,22 @@
                     </div>
                 </div>
             </div>
-            <div class="copyright-information">
-                <p>© 2022-2023, Scoop. All rights reserved. Made by Marielle Louisse Lopez, 2023.<p>
+            <div id="copyright-information">
             </div>
         </footer>
+
+        <script>
+            function setCopyrightInformation() {
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear();
+
+                let copyrightText = `<p>© 2022-${currentYear}, Scoop. All rights reserved. Made by Marielle Louisse Lopez, ${currentYear}.</p>`;
+
+                let copyrightContent = document.getElementById('copyright-information');
+                copyrightContent.innerHTML = copyrightText;
+            }
+
+            setCopyrightInformation();
+        </script>
     </body>
 </html>
