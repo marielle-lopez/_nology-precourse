@@ -1,9 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 main p {
     text-align: left;
 }
 
 main img {
-    height: 400px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
     border-radius: 20px;
     margin-bottom: 50px;
+}
+
+.quote {
+    font-family: 'Caveat Brush', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    max-width: 80%;
+}
+
+.introductory-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
